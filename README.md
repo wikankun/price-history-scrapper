@@ -32,7 +32,7 @@ pytest
   {"url": "https://shopee.co.id/chiqofficial"}
   ```
   
-- `Swagger API Docs` `localhost:5000/docs`
+- Swagger API Docs `localhost:5000/docs`
 
 # Deployed to Heroku
 
