@@ -19,10 +19,18 @@ pytest
 # Endpoints
 
 - `POST` `localhost:5000/shopee/item`
-  payload: `JSON` {"url": "https://shopee.co.id/Logitech-G102-Lightsync-Gaming-Mouse-i.39400356.3840449468"}
+
+  payload: `JSON`
+  ```
+  {"url": "https://shopee.co.id/Logitech-G102-Lightsync-Gaming-Mouse-i.39400356.3840449468"}
+  ```
   
 - `POST` `localhost:5000/shopee/shop`
-  payload: `JSON` {"url": "https://shopee.co.id/chiqofficial"}
+
+  payload: `JSON`
+  ```
+  {"url": "https://shopee.co.id/chiqofficial"}
+  ```
   
 - `Swagger API Docs` `localhost:5000/docs`
 
