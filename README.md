@@ -33,7 +33,3 @@ pytest
   ```
   
 - Swagger API Docs `localhost:5000/docs`
-
-# Deployed to Heroku
-
-URL: [API docs](https://scrapper-harga.herokuapp.com/docs)
