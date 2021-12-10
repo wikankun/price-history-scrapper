@@ -55,6 +55,10 @@ class Scrapper:
             result['price'] = Price.fromstring(price.get_text()).amount_float
             stock = soup.find("div", class_="_90fTvx")
             result['stock'] = int(re.search(r'tersisa (.*?) buah', str(stock)).group(1))
+            rating = soup.find("div", class_="_1mYa1t")
+            result['rating'] = rating.get_text()
+            shop = soup.find("div", class_="_3uf2ae")
+            result['shop'] = shop.get_text()
             desc = soup.find("div", class_="_3yZnxJ")
             result['desc'] = desc.get_text()
             main_img = soup.find("div", class_="_3Q7kBy")
