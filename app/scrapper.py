@@ -41,8 +41,9 @@ class Scrapper:
             result = self.shopee_item(soup)
         if type == 'shop':
             result = self.shopee_shop(soup)
+        if type == 'item-category':
+            result = self.shopee_item_category(soup)
 
-        # browser.quit()
         return result
     
     def shopee_item(self, soup):
@@ -69,7 +70,6 @@ class Scrapper:
                 list_img.append(re.search(r'url\("(.*?)"\);', str(img["style"])).group(1))
             result["imgs"] = list_img
             # category = soup.find("div", class_="")
-            # weight = soup.find("div", class_="")
         except Exception as e:
             print(e)
         
@@ -89,5 +89,20 @@ class Scrapper:
             result['tagline'] = tagline.get_text()
         except Exception as e:
             print(e)
+            
+        return result
+
+    def shopee_item_category(self, soup):
+        result = {}
+
+        items = soup.findAll("div", class_="shopee-search-item-result__item")
+        urls = []
+        for item in items:
+            try:
+                url = 'https://shopee.co.id' + re.search(r'href="(.*?)"', str(item)).group(1)
+                urls.append(url)
+            except Exception as e:
+                print(e)
+        result["urls"] = urls
             
         return result
